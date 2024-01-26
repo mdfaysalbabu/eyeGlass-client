@@ -1,7 +1,9 @@
+import Login from "./pages/Login";
+
 const App = () => {
   return (
     <div>
-      <h1>Start from app component</h1>
+      <Login></Login>
     </div>
   );
 };
