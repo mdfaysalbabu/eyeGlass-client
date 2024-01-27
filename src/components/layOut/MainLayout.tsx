@@ -11,6 +11,7 @@ const MainLayout = () => {
   const handleCreateVariantClick = () => {
     setShowProductForm(true);
   };
+// please delete it
 
   const handleProductFormClose = () => {
     setShowProductForm(false);
