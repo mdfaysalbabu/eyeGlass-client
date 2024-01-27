@@ -1,9 +1,12 @@
-import Login from "./pages/Login";
+import MainLayout from "./components/layOut/MainLayout";
+import ProtectedRoute from "./components/layOut/ProtectedRoute";
 
 const App = () => {
   return (
     <div>
-      <Login></Login>
+      <ProtectedRoute>
+        <MainLayout />
+      </ProtectedRoute>
     </div>
   );
 };
