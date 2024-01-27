@@ -48,13 +48,13 @@ const Register = () => {
     }
   };
   return (
-    <div>
-      <div className="w-full max-w-md p-8 space-y-3 rounded-xl border bg-white   font-sans mx-auto">
+   
+      <div className="w-full max-w-md p-8 space-y-3 rounded-xl border b  font-sans mx-auto lg:w-[500px] drop-shadow-lg bg-purple-200 mt-12">
         <h1 className="text-3xl font-bold text-center text-indigo-600">
           Register
         </h1>
 
-        <form onSubmit={handleSubmit(onSubmit)} action="" className="space-y-6">
+        <form onSubmit={handleSubmit(onSubmit)} action="" className="space-y-6 ">
           <div className="space-y-2 text-sm">
             <label htmlFor="username" className="block ">
               Your name
@@ -116,7 +116,7 @@ const Register = () => {
           </Link>
         </p>
       </div>
-    </div>
+  
   );
 };
 
