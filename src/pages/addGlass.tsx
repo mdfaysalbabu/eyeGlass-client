@@ -8,7 +8,7 @@ const AddGlass = () => {
   const image_upload_url = `https://api.imgbb.com/1/upload?key=${image_upload_token}`;
 
   const { register, handleSubmit } = useForm();
-  const [addGlass] = useAddEyeGlassMutation();
+  const [addEyeGlass] = useAddEyeGlassMutation();
 
   const onSubmit = (data: FieldValues) => {
     const toastId = toast.loading("Please wait...");
@@ -48,11 +48,11 @@ const AddGlass = () => {
               gender,
               color,
             };
-            await addGlass(glassData);
+            await addEyeGlass(glassData);
             console.log({ glassData });
             toast.success("Product added successfully!", {
               id: toastId,
-              duration: 2000,
+              duration: 3000,
             });
           }
         });
@@ -62,7 +62,7 @@ const AddGlass = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-gray-700 to-purple-400 py-8">
+    <div className="bg-gradient-to-r from-gray-700 to-purple-400 py-8 ">
       <div className="max-w-3xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-white mb-6 text-center">
           Add New Glass

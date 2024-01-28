@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import { toast } from "sonner";
 
@@ -14,7 +14,7 @@ const Sidebar = () => {
     toast.success("Logged out", { id: toastId, duration: 2000 });
   };
   return (
-    <div className="bg-gray-800 text-white w-64 flex flex-col justify-between ">
+    <div className="bg-gray-800 text-white w-64 flex flex-col justify-between h-screen">
       <div className="p-4">
         <h2 className="text-xl font-bold mb-4 text-orange-600">
           EyeGlass Company
@@ -32,11 +32,14 @@ const Sidebar = () => {
               </li>
             </Link>
           </div>
-          <Link to="/sales-history">
+          <NavLink
+            className={({ isActive }) => (isActive ? "bg-deep-orange-400" : "")}
+            to="/sales-history"
+          >
             <li className="py-2 px-4 hover:bg-gray-700 rounded-md cursor-pointer">
               Sales History
             </li>
-          </Link>
+          </NavLink>
         </ul>
       </div>
       <div className="p-4 bg-gray-900">

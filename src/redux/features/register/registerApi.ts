@@ -1,6 +1,5 @@
 import { baseApi } from "../../api/baseApi";
 
-
 const registerApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     register: builder.mutation({
