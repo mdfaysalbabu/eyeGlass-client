@@ -170,6 +170,7 @@ const ProductCard: React.FC<TGlassProps> = (
                   >
                     Delete
                   </Button>
+                  
                 </Tooltip>
               </td>
               <td className="p-4">
