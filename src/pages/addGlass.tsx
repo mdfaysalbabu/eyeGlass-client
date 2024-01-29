@@ -1,14 +1,15 @@
 import { FieldValues, useForm } from "react-hook-form";
 
 import { toast } from "sonner";
+import { Button, Input } from "@material-tailwind/react";
 import { useAddEyeGlassMutation } from "../redux/features/eyeGlassesApi/eyeGlassApi";
 const image_upload_token = import.meta.env.VITE_image_upload_token;
 
 const AddGlass = () => {
   const image_upload_url = `https://api.imgbb.com/1/upload?key=${image_upload_token}`;
 
-  const { register, handleSubmit } = useForm();
-  const [addEyeGlass] = useAddEyeGlassMutation();
+  const { register, handleSubmit, reset } = useForm();
+  const [addGlass] = useAddEyeGlassMutation();
 
   const onSubmit = (data: FieldValues) => {
     const toastId = toast.loading("Please wait...");
@@ -48,12 +49,12 @@ const AddGlass = () => {
               gender,
               color,
             };
-            await addEyeGlass(glassData);
-            console.log({ glassData });
+            await addGlass(glassData);
             toast.success("Product added successfully!", {
               id: toastId,
-              duration: 3000,
+              duration: 2000,
             });
+            reset();
           }
         });
     } catch (error) {
@@ -62,82 +63,122 @@ const AddGlass = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-gray-700 to-purple-400 py-8 ">
-      <div className="max-w-3xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-white mb-6 text-center">
-          Add New Glass
-        </h2>
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="grid grid-cols-1 gap-6 sm:grid-cols-2"
-        >
-          <input
-            {...register("productName")}
-            type="text"
-            placeholder="Product Name"
-            className="input-field p-1"
-          />
-          <input
-            {...register("productPrice")}
-            type="number"
-            placeholder="Product Price"
-            className="input-field p-1"
-          />
-          <input
-            {...register("productQuantity")}
-            type="number"
-            placeholder="Product Quantity"
-            className="input-field p-1"
-          />
-          <input
-            {...register("frameMaterial")}
-            type="text"
-            placeholder="Frame Material"
-            className="input-field p-1"
-          />
-          <input
-            {...register("frameShape")}
-            type="text"
-            placeholder="Frame Shape"
-            className="input-field p-1"
-          />
-          <input
-            {...register("lensType")}
-            type="text"
-            placeholder="Lens Type"
-            className="input-field p-1"
-          />
-          <input
-            {...register("brand")}
-            type="text"
-            placeholder="Brand"
-            className="input-field p-1"
-          />
-          <input
-            {...register("gender")}
-            type="text"
-            placeholder="Gender"
-            className="input-field p-1"
-          />
-          <input
-            {...register("color")}
-            type="text"
-            placeholder="Color"
-            className="input-field p-1"
-          />
-          <input
-            type="file"
-            {...register("productImage")}
-            className="input-field p-1"
-          />
-          <button
+    <div className="my-4 mx-10">
+      <h1>Add Glass</h1>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 my-5">
+          <div>
+            <Input
+              {...register("productName")}
+              type="text"
+              crossOrigin={""}
+              placeholder=""
+              color="indigo"
+              label="Product Name"
+            />
+          </div>
+          <div>
+            <Input
+              {...register("productPrice")}
+              type="number"
+              crossOrigin={""}
+              placeholder=""
+              color="indigo"
+              label="Product Price"
+            />
+          </div>
+          <div>
+            <Input
+              {...register("productQuantity")}
+              type="number"
+              crossOrigin={""}
+              placeholder=""
+              color="indigo"
+              label="Product Quantity"
+            />
+          </div>
+          <div>
+            <Input
+              {...register("frameMaterial")}
+              type="text"
+              crossOrigin={""}
+              placeholder=""
+              color="indigo"
+              label="Frame Material"
+            />
+          </div>
+          <div>
+            <Input
+              {...register("frameShape")}
+              type="text"
+              crossOrigin={""}
+              placeholder=""
+              color="indigo"
+              label="Frame Shape"
+            />
+          </div>
+          <div>
+            <Input
+              {...register("lensType")}
+              type="text"
+              crossOrigin={""}
+              placeholder=""
+              color="indigo"
+              label="Lens Type"
+            />
+          </div>
+          <div>
+            <Input
+              {...register("brand")}
+              type="text"
+              crossOrigin={""}
+              placeholder=""
+              color="indigo"
+              label="Brand"
+            />
+          </div>
+          <div>
+            <Input
+              {...register("color")}
+              type="text"
+              crossOrigin={""}
+              placeholder=""
+              color="indigo"
+              label="Color"
+            />
+          </div>
+          <div>
+            <select
+              className="w-full py-2 rounded-lg border border-purple-50 text-sm text-gray-500"
+              {...register("gender")}
+            >
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+          <div>
+            <Input
+              {...register("productImage")}
+              type="file"
+              crossOrigin={""}
+              placeholder=""
+              color="indigo"
+              label="Product Image"
+            />
+          </div>
+        </div>
+        <div className="flex float-end ">
+          <Button
             type="submit"
-            className="bg-yellow-400 hover:bg-yellow-500 text-white py-3 px-6 rounded-lg font-semibold transition duration-300 col-span-2"
+            variant="gradient"
+            size="sm"
+            color="indigo"
+            placeholder={""}
           >
             Add Glass
-          </button>
-        </form>
-      </div>
+          </Button>
+        </div>
+      </form>
     </div>
   );
 };

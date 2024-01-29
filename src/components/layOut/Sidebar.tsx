@@ -1,7 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-
 import { toast } from "sonner";
-
 import { useAppDispatch } from "../../redux/features/hooks";
 import { logout } from "../../redux/features/apiAuth/authSlice";
 
@@ -13,9 +11,10 @@ const Sidebar = () => {
     dispatch(logout());
     toast.success("Logged out", { id: toastId, duration: 2000 });
   };
+
   return (
-    <div className="bg-gray-800 text-white w-64 flex flex-col justify-between h-screen">
-      <div className="p-4">
+    <div className="flex flex-col h-screen bg-gray-800 text-white">
+      <div className="p-4 flex-shrink-0">
         <h2 className="text-xl font-bold mb-4 text-orange-600">
           EyeGlass Company
         </h2>
@@ -25,13 +24,11 @@ const Sidebar = () => {
               Add Glass
             </li>
           </Link>
-          <div className="pb-3">
-            <Link to="/all-products">
-              <li className="py-2 px-4 hover:bg-gray-700 rounded-md cursor-pointer">
-                Eye Glasses
-              </li>
-            </Link>
-          </div>
+          <Link to="/all-products">
+            <li className="py-2 px-4 hover:bg-gray-700 rounded-md cursor-pointer">
+              Eye Glasses
+            </li>
+          </Link>
           <NavLink
             className={({ isActive }) => (isActive ? "bg-deep-orange-400" : "")}
             to="/sales-history"
@@ -42,10 +39,12 @@ const Sidebar = () => {
           </NavLink>
         </ul>
       </div>
-      <div className="p-4 bg-gray-900">
-        <Link onClick={handleLogout} to="/login">
-          <p className="text-xl py-1 px-1 hover:bg-gray-700">Logout</p>
-        </Link>
+      <div className="flex-shrink-0">
+        <div className="p-4 bg-gray-900">
+          <Link onClick={handleLogout} to="/login">
+            <p className="text-xl py-1 px-1 hover:bg-gray-700">Logout</p>
+          </Link>
+        </div>
       </div>
     </div>
   );
