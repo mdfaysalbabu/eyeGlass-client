@@ -43,7 +43,7 @@ const SalesHistory = () => {
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <div>
             <Typography placeholder={""} variant="h4" color="purple">
-              All Glasses
+            Sales History
             </Typography>
           </div>
           <div>

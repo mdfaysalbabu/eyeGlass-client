@@ -17,6 +17,7 @@ import {
   useDeleteManyEyeGlassMutation,
   useGetAllEyeGlassQuery,
 } from "../redux/features/eyeGlassesApi/eyeGlassApi";
+import Swal from "sweetalert2";
 
 const AllGlasses = () => {
   const [material, setMaterial] = useState("");
@@ -58,8 +59,24 @@ const AllGlasses = () => {
   };
 
   const handleDeleteMany = async () => {
-    const res = await deletedAll(productsId);
-    console.log(res);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        await deletedAll(productsId);
+        Swal.fire({
+          title: "Deleted!",
+          text: "Glass has been deleted.",
+          icon: "success",
+        });
+      }
+    });
   };
 
   const TABLE_HEAD = [
@@ -70,6 +87,7 @@ const AllGlasses = () => {
         color="red"
         className="py-2 px-3"
         onClick={handleDeleteMany}
+        disabled={!productsId[0]}
       >
         Delete All
       </Button>
@@ -114,7 +132,7 @@ const AllGlasses = () => {
               </option>
               <option value="Metal">Metal</option>
               <option value="Plastic">Plastic</option>
-              <option value="Acetate">Acetate</option>
+              <option value="Acetate">Titanium</option>
             </select>
           </div>
           <div>
@@ -141,8 +159,8 @@ const AllGlasses = () => {
                 Filter by Lens
               </option>
               <option value="Single-vision">Single-vision</option>
-              <option value="Bifocal">Bifocal</option>
-              <option value="Progressive">Progressive</option>
+              <option value="Bifocal">Polarized</option>
+              <option value="Progressive">UV Protection</option>
             </select>
           </div>
           <div>
@@ -155,7 +173,7 @@ const AllGlasses = () => {
                 Filter by Brand
               </option>
               <option value="Lenskart">Lenskart</option>
-              <option value="Prada">Prada</option>
+              <option value="Prada">UrbanStyle</option>
               <option value="Gucci">Gucci</option>
             </select>
           </div>
@@ -217,7 +235,10 @@ const AllGlasses = () => {
           </div>
         </div>
       </CardHeader>
-      <CardBody placeholder={""} className=" px-0 max-auto table-auto text-left">
+      <CardBody
+        placeholder={""}
+        className=" px-0 max-auto table-auto text-left"
+      >
         <table className="mt-4 w-full ">
           <thead>
             <tr>

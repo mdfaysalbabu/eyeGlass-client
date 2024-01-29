@@ -100,7 +100,7 @@ const eyeGlassApi = baseApi.injectEndpoints({
     sellEyeGlass: builder.mutation({
       query: (sellData) => {
         return {
-          url: `/eyeglass/create-sales`,
+          url: `/sales/create-sales`,
           method: "POST",
           body: sellData,
         };

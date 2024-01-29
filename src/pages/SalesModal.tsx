@@ -14,7 +14,6 @@ import { FieldValues, useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { useSellEyeGlassMutation } from "../redux/features/eyeGlassesApi/eyeGlassApi";
 
-
 const SalesModal = ({ id }: { id: string }) => {
   const [open, setOpen] = useState(false);
   const { register, handleSubmit } = useForm();
@@ -27,9 +26,15 @@ const SalesModal = ({ id }: { id: string }) => {
       const productQuantity = Number(data.quantity);
       const { productId, buyerName } = data;
       const sellData = { productId, buyerName, quantity: productQuantity };
+      if (!buyerName || !productQuantity) {
+        toast.error("Please provide input value", {
+          id: toastId,
+          duration: 2000,
+        });
+      }
 
       const res: any = await sellProduct(sellData);
-      console.log(res);
+
       if (res?.error?.data) {
         toast.error(`${data.quantity} is more than the product quantity`, {
           id: toastId,
