@@ -16,8 +16,7 @@ import {
   Card,
 } from "@material-tailwind/react";
 import {
-  PresentationChartBarIcon,
-  ShoppingBagIcon,
+  
   PowerIcon,
 } from "@heroicons/react/24/solid";
 import {

@@ -31,6 +31,7 @@ const AllGlasses = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [productsId, setProductsId] = useState<string[]>([]);
   const [deletedAll] = useDeleteManyEyeGlassMutation();
+  const [page, setPage] = useState(1);
   const query = {
     material,
     shape,
@@ -41,6 +42,8 @@ const AllGlasses = () => {
     minPrice,
     maxPrice,
     searchTerm,
+    page,
+    limit: 5,
   };
   const { data: eyeGlasses, isLoading } = useGetAllEyeGlassQuery(query);
 
@@ -275,13 +278,23 @@ const AllGlasses = () => {
           color="blue-gray"
           className="font-normal"
         >
-          Page 1 of 10
+          {`Page ${page} `}
         </Typography>
         <div className="flex gap-2">
-          <Button placeholder={""} variant="outlined" size="sm">
+          <Button
+            onClick={() => setPage(page - 1)}
+            placeholder={""}
+            variant="outlined"
+            size="sm"
+          >
             Previous
           </Button>
-          <Button placeholder={""} variant="outlined" size="sm">
+          <Button
+            onClick={() => setPage(page + 1)}
+            placeholder={""}
+            variant="outlined"
+            size="sm"
+          >
             Next
           </Button>
         </div>

@@ -1,30 +1,25 @@
-# React + TypeScript + Vite
+# \***\*Assignment-5: Eye Glass Inventory\*\***
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Locally run : npm run dev
 
-Currently, two official plugins are available:
+- open the command prompt on the project path or terminal on the vs code by pressing ctrl+
+- run the command npm i or npm install all the necessary dependencies.
+- to run the frontend on [http://localhost:5174] run the command 'npm run dev'
+- To run the production version run the command 'npm run build ' .
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live-Link And Api-Document-Link
 
-## Expanding the ESLint configuration
+Live-Link: [https://eyeglasses-client.vercel.app](https://eyeglasses-client.vercel.app)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Project-Description-Video-Link: [https://drive.google.com/file/d/1yiSFjHobsf8kK1o2Zx3aCpAwxYhy4wPC/view?usp=sharing](https://drive.google.com/file/d/1yiSFjHobsf8kK1o2Zx3aCpAwxYhy4wPC/view?usp=sharing)
 
-- Configure the top-level `parserOptions` property like this:
+## Project Description Simple
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+- Use React Vite for fast and using Tailwind CSS & Tailwind Material for design.
+- Use Redux  Redux-Toolkit for state management.
+- Use Redux persist, react hook form,react-router-dom, and some npm package like sweet alert2,jwt-decode,jsonwebtoken, sonner etc.
+- Use jwt-decode for decoding access token for use.
+- Use Typescript for good developer experience and type safety code clean and good experience.
+- manage dashboard add,all eye glass show and sales history.
+- implement registration and login user
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
