@@ -28,17 +28,17 @@ const Login = () => {
     const user = verifyToken(res.data.accessToken) as TUser;
     dispatch(setUser({ user, token: res.data.accessToken }));
     toast.success("Logged in", { id: toastId, duration: 2000 });
-    navigate(`/`);
+    navigate(`/all-products`);
   };
 
   return (
-    <div className="w-full mx-auto lg:w-[500px] drop-shadow-lg bg-purple-200">
+    <div className="w-full  mx-auto lg:w-[500px] drop-shadow-lg bg-teal-200 ">
       <div className="mt-6">
         <h1 className="text-2xl text-center pt-5">
-          Login to <span className="font-semibold text-3xl">Eye Glass</span>
+          Login to <span className="font-semibold text-3xl text-gray-700">Eye Glass</span>
         </h1>
       </div>
-      <form onSubmit={handleSubmit(onSubmit)} className=" md:p-24 ">
+      <form onSubmit={handleSubmit(onSubmit)} className=" md:p-18 p-10 ">
         
         <div className="space-y-5">
           <label htmlFor="email" className="block">

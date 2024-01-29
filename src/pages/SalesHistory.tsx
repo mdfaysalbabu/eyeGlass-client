@@ -32,17 +32,17 @@ const SalesHistory = () => {
   }
 
   return (
-    <Card placeholder={""} className="h-full w-full">
+    <Card placeholder={""} className="h-full w-full bg-green-200">
       <CardHeader
         placeholder={""}
         floated={false}
         shadow={false}
-        className="rounded-none "
+        className="rounded-lg bg-red-100 p-3"
       >
         <div className="mb-6 mt-4 flex items-center justify-between gap-8"></div>
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <div>
-            <Typography placeholder={""} variant="h4" color="blue-gray">
+            <Typography placeholder={""} variant="h4" color="purple">
               All Glasses
             </Typography>
           </div>

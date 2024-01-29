@@ -63,93 +63,101 @@ const AddGlass = () => {
   };
 
   return (
-    <div className="my-4 mx-10">
-      <h1>Add Glass</h1>
+    <div className=" mx-auto bg-deep-purple-50 md:p-12   ">
+      <h1 className="text-indigo-800 text-3xl p-3">Add EyeGlass</h1>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 my-5">
+        <div className="grid lg:grid-cols-2 grid-cols-1 gap-3 my-3 ">
           <div>
             <Input
+              className="shadow-md p-5 drop-shadow-lg outline-none "
               {...register("productName")}
               type="text"
               crossOrigin={""}
               placeholder=""
-              color="indigo"
+              color="green"
               label="Product Name"
             />
           </div>
           <div>
             <Input
+              className="shadow-md p-5 drop-shadow-lg outline-none "
               {...register("productPrice")}
               type="number"
               crossOrigin={""}
               placeholder=""
-              color="indigo"
+              color="green"
               label="Product Price"
             />
           </div>
           <div>
             <Input
+              className="shadow-md p-5 drop-shadow-lg outline-none"
               {...register("productQuantity")}
               type="number"
               crossOrigin={""}
               placeholder=""
-              color="indigo"
+              color="green"
               label="Product Quantity"
             />
           </div>
           <div>
             <Input
+              className="shadow-md p-5 drop-shadow-lg outline-none"
               {...register("frameMaterial")}
               type="text"
               crossOrigin={""}
               placeholder=""
-              color="indigo"
+              color="green"
               label="Frame Material"
             />
           </div>
           <div>
             <Input
+              className="shadow-md p-5 drop-shadow-lg outline-none"
               {...register("frameShape")}
               type="text"
               crossOrigin={""}
               placeholder=""
-              color="indigo"
+              color="green"
               label="Frame Shape"
             />
           </div>
           <div>
             <Input
+              className="shadow-md p-5 drop-shadow-lg outline-none"
               {...register("lensType")}
               type="text"
               crossOrigin={""}
               placeholder=""
-              color="indigo"
+              color="green"
               label="Lens Type"
             />
           </div>
           <div>
             <Input
+              className="shadow-md p-5 drop-shadow-lg outline-none"
               {...register("brand")}
               type="text"
               crossOrigin={""}
               placeholder=""
-              color="indigo"
+              color="green"
               label="Brand"
             />
           </div>
           <div>
             <Input
+              className="shadow-md p-5 drop-shadow-lg outline-none"
               {...register("color")}
               type="text"
               crossOrigin={""}
               placeholder=""
-              color="indigo"
+              color="green"
               label="Color"
             />
           </div>
           <div>
             <select
-              className="w-full py-2 rounded-lg border border-purple-50 text-sm text-gray-500"
+              className="w-full py-2 rounded-lg border border-purple-50 text-sm text-gray-500 shadow-md p-5 drop-shadow-lg outline-none"
               {...register("gender")}
             >
               <option value="Male">Male</option>
@@ -158,24 +166,26 @@ const AddGlass = () => {
           </div>
           <div>
             <Input
+              className="shadow-lg p-8 drop-shadow-lg outline-none"
               {...register("productImage")}
               type="file"
               crossOrigin={""}
               placeholder=""
-              color="indigo"
+              color="green"
               label="Product Image"
             />
           </div>
         </div>
         <div className="flex float-end ">
           <Button
+            className="shadow-xl rounded-lg"
             type="submit"
             variant="gradient"
-            size="sm"
-            color="indigo"
+            size="md"
+            color="green"
             placeholder={""}
           >
-            Add Glass
+            Add Eye Glass
           </Button>
         </div>
       </form>

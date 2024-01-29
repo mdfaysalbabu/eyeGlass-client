@@ -95,14 +95,14 @@ const AllGlasses = () => {
   }
 
   return (
-    <Card placeholder={""} className="h-full w-full">
+    <Card placeholder={""} className="bg-blue-gray-500 mx-auto">
       <CardHeader
         placeholder={""}
         floated={false}
         shadow={false}
-        className="rounded-none "
+        className="rounded-xl bg-blue-100 p-1 "
       >
-        <div className="mb-6 mt-4 flex items-center justify-between gap-8">
+        <div className="mb-6 mt-4 flex justify-start items-start gap-4 mx-auto w-full ">
           <div>
             <select
               value={material}
@@ -201,9 +201,9 @@ const AllGlasses = () => {
             />
           </div>
         </div>
-        <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
+        <div className="flex flex-col items-center justify-between gap-4 md:flex-row ">
           <div>
-            <Typography placeholder={""} variant="h4" color="blue-gray">
+            <Typography placeholder={""} variant="h4" color="teal">
               All Glasses
             </Typography>
           </div>
@@ -217,8 +217,8 @@ const AllGlasses = () => {
           </div>
         </div>
       </CardHeader>
-      <CardBody placeholder={""} className=" px-0 ">
-        <table className="mt-4 w-full min-w-max table-auto text-left">
+      <CardBody placeholder={""} className=" px-0 max-auto table-auto text-left">
+        <table className="mt-4 w-full ">
           <thead>
             <tr>
               {TABLE_HEAD.map((head, index) => (

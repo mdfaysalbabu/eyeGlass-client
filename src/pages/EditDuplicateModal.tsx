@@ -76,21 +76,21 @@ const EditDuplicateModal = ({ id }: { id: string }) => {
   };
 
   return (
-    <>
+    <div className="">
       <Button
         placeholder={""}
         variant="outlined"
-        color="blue"
+        color="green"
         className="py-2 px-3"
         onClick={handleOpen}
       >
         Edit & Duplicate
       </Button>
       <Dialog placeholder={""} open={open} handler={handleOpen}>
-        <div>
+        <div className="bg-teal-50">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex justify-between items-center">
-              <DialogHeader placeholder={""}>Edit & Duplicate</DialogHeader>
+            <div className="flex justify-between items-center ">
+              <DialogHeader className="text-green-500" placeholder={""}>Edit & Duplicate</DialogHeader>
               <div
                 onClick={handleOpen}
                 className="me-4 cursor-pointer border-2 border-red-400 p-1"
@@ -236,7 +236,7 @@ const EditDuplicateModal = ({ id }: { id: string }) => {
           </form>
         </div>
       </Dialog>
-    </>
+    </div>
   );
 };
 

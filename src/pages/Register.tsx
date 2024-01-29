@@ -50,12 +50,12 @@ const Register = () => {
     }
   };
   return (
-    <div className="w-full max-w-md p-8 space-y-3 rounded-xl border b  font-sans mx-auto lg:w-[500px] drop-shadow-lg bg-purple-200 mt-12">
+    <div className="w-full max-w-md p-8 space-y-3 rounded-xl border b  font-sans mx-auto lg:w-[500px] drop-shadow-lg bg-teal-200 mt-12">
       <h1 className="text-3xl font-bold text-center text-indigo-600">
         Register
       </h1>
 
-      <form onSubmit={handleSubmit(onSubmit)} action="" className="space-y-6 ">
+      <form onSubmit={handleSubmit(onSubmit)} action="" className="space-y-4 ">
         <div className="space-y-2 text-sm">
           <label htmlFor="name" className="block ">
             Your name
@@ -109,10 +109,13 @@ const Register = () => {
       </form>
 
       <p className="text-sm text-center gap-2 flex justify-center sm:px-6 ">
-        Don't have an account?
-        <Link to="/login" className="underline hover:text-indigo-600">
-          Login
-        </Link>
+         have an account
+        <Link
+              to="/login"
+              className="font-semibold text-gray-800 hover:underline focus:text-gray-800 focus:outline-none ms-1 text-md"
+            >
+              Login
+            </Link>
       </p>
     </div>
   );

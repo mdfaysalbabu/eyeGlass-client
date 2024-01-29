@@ -120,10 +120,10 @@ const UpdateModal = ({ id }: { id: string }) => {
         Update
       </Button>
       <Dialog placeholder={""} open={open} handler={handleOpen}>
-        <div>
+        <div className="bg-teal-50">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="flex justify-between items-center">
-              <DialogHeader placeholder={""}>Update Glass</DialogHeader>
+              <DialogHeader placeholder={""} className="text-green-500">Update Glass</DialogHeader>
               <div
                 onClick={handleOpen}
                 className="me-4 cursor-pointer border-2 border-red-400 p-1"
