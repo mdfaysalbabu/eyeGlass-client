@@ -17,11 +17,11 @@ import {
 } from "@material-tailwind/react";
 import { PowerIcon } from "@heroicons/react/24/solid";
 import {
-  ChevronRightIcon,
   MagnifyingGlassIcon,
   Bars3Icon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
+import { FaChartLine, FaEye, FaGlasses, FaPlus } from "react-icons/fa";
 
 const Sidebar = () => {
   const dispatch = useAppDispatch();
@@ -40,82 +40,72 @@ const Sidebar = () => {
   return (
     <div>
       <div className="hidden lg:block">
-        {" "}
         {/* Only visible on large screens */}
         <Card
           placeholder="..."
           color="transparent"
           shadow={false}
-          className="h-[calc(100vh-2rem)] w-full p-4"
+          className="h-[calc(100vh--2rem)]  w-full p-6 bg-gradient-to-br from-pink-500 to-purple-300"
         >
-          <div className="mb-2 flex items-center gap-4 p-4">
-            <img
-              src="https://docs.material-tailwind.com/img/logo-ct-dark.png"
-              alt="brand"
-              className="h-8 w-8"
-            />
-            <Typography placeholder="..." variant="h5" color="green">
+          <div className="mb-6 mt-4 flex items-center gap-4 p-4">
+            <FaGlasses className="h-6 w-6 text-white" />
+            <Typography
+              placeholder="..."
+              variant="h5"
+              color="yellow"
+              className="text-3xl"
+            >
               Eye Glasses
             </Typography>
           </div>
           <div className="p-2">
             <Input
+              className="text-white border-2 border-white rounded-md px-4 py-2 focus:outline-none focus:border-white text-2xl"
               crossOrigin="..."
-              icon={<MagnifyingGlassIcon className="h-5 w-5" />}
+              icon={<MagnifyingGlassIcon className="h-6 w-6 text-gray-300" />}
               label="Search"
+              success
             />
           </div>
           <List placeholder="...">
-            <ListItemPrefix placeholder="...">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                />
-              </svg>
-            </ListItemPrefix>
-
             <List placeholder="..." className="p-0">
               <ListItem placeholder="...">
                 <ListItemPrefix placeholder="...">
-                  <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                  <FaPlus strokeWidth={3} className="h-6 w-6 text-gray-300" />
                 </ListItemPrefix>
-                <NavLink to="/add-product">Add Glass</NavLink>
+                <NavLink to="/add-product" className="text-white">
+                  Add Glass
+                </NavLink>
               </ListItem>
               <ListItem placeholder="...">
                 <ListItemPrefix placeholder="...">
-                  <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                  <FaEye strokeWidth={3} className="h-6 w-6 text-gray-300" />
                 </ListItemPrefix>
-                <NavLink to="/all-products">Eye Glasses</NavLink>
+                <NavLink to="/all-products" className="text-white">
+                  Eye Glasses
+                </NavLink>
               </ListItem>
               <ListItem placeholder="...">
                 <ListItemPrefix placeholder="...">
-                  <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                  <FaChartLine
+                    strokeWidth={3}
+                    className="h-6 w-6 text-gray-300"
+                  />
                 </ListItemPrefix>
-                <NavLink to="/sales-history">Sales History</NavLink>
+                <NavLink to="/sales-history" className="text-white">
+                  Sales History
+                </NavLink>
               </ListItem>
             </List>
 
-            <hr className="my-2 border-blue-gray-50" />
+            <hr className="my-2 border-gray-300" />
 
             <ListItem placeholder="...">
               <ListItemPrefix placeholder="...">
-                <PowerIcon className="h-5 w-5" />
+                <PowerIcon className="h-5 w-5 text-gray-300" />
               </ListItemPrefix>
-              <Link onClick={handleLogout} to="/login">
+
+              <Link onClick={handleLogout} to="/login" className="text-white">
                 Log Out
               </Link>
             </ListItem>
@@ -130,9 +120,9 @@ const Sidebar = () => {
         className="lg:hidden" // Hide on large screens
       >
         {isDrawerOpen ? (
-          <XMarkIcon className="h-8 w-8 stroke-2" />
+          <XMarkIcon className="h-8 w-8 stroke-2 text-gray-300" />
         ) : (
-          <Bars3Icon className="h-8 w-8 stroke-2" />
+          <Bars3Icon className="h-8 w-8 stroke-2 text-gray-300" />
         )}
       </IconButton>
       <Drawer
@@ -141,83 +131,80 @@ const Sidebar = () => {
         onClose={closeDrawer}
         className="lg:hidden"
       >
-        {" "}
         {/* Render only on small screens */}
         {/* Insert content here for the drawer */}
         <Card
           placeholder="..."
           color="transparent"
           shadow={false}
-          className="h-[calc(100vh-2rem)] w-full p-4"
+          className="h-[calc(100vh-2rem)] w-full p-4 bg-gradient-to-br from-pink-500 to-purple-300"
         >
-          <div className="mb-2 flex items-center gap-4 p-4">
+          <div className="mb-6 mt-4 flex items-center gap-4 p-4">
             <img
               src="https://docs.material-tailwind.com/img/logo-ct-dark.png"
               alt="brand"
               className="h-8 w-8"
             />
-            <Typography placeholder="..." variant="h5" color="green">
+            <Typography
+              placeholder="..."
+              variant="h5"
+              color="white"
+              className="text-lg"
+            >
               Eye Glasses
             </Typography>
           </div>
           <div className="p-2">
             <Input
+              className="text-white border-2 border-white rounded-md px-4 py-2 focus:outline-none focus:border-white text-2xl"
               crossOrigin="..."
-              icon={<MagnifyingGlassIcon className="h-5 w-5" />}
+              icon={<MagnifyingGlassIcon className="h-6 w-6 text-gray-300" />}
               label="Search"
+              success
             />
           </div>
           <List placeholder="...">
             <ListItemPrefix placeholder="...">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-6 h-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                />
-              </svg>
+              <FaGlasses className="h-6 w-6 text-gray-300" />
             </ListItemPrefix>
 
             <List placeholder="..." className="p-0">
               <ListItem placeholder="...">
                 <ListItemPrefix placeholder="...">
-                  <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                  <FaPlus strokeWidth={3} className="h-6 w-6 text-gray-300" />
                 </ListItemPrefix>
-                <NavLink to="/add-product">Add Glass</NavLink>
+                <NavLink to="/add-product" className="text-white">
+                  Add Glass
+                </NavLink>
               </ListItem>
               <ListItem placeholder="...">
                 <ListItemPrefix placeholder="...">
-                  <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                  <FaEye strokeWidth={3} className="h-6 w-6 text-gray-300" />
                 </ListItemPrefix>
-                <NavLink to="/all-products">Eye Glasses</NavLink>
+                <NavLink to="/all-products" className="text-white">
+                  Eye Glasses
+                </NavLink>
               </ListItem>
               <ListItem placeholder="...">
                 <ListItemPrefix placeholder="...">
-                  <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                  <FaChartLine
+                    strokeWidth={3}
+                    className="h-6 w-6 text-gray-300"
+                  />
                 </ListItemPrefix>
-                <NavLink to="/sales-history">Sales History</NavLink>
+                <NavLink to="/sales-history" className="text-white">
+                  Sales History
+                </NavLink>
               </ListItem>
             </List>
 
-            <hr className="my-2 border-blue-gray-50" />
+            <hr className="my-2 border-gray-300" />
 
             <ListItem placeholder="...">
               <ListItemPrefix placeholder="...">
-                <PowerIcon className="h-5 w-5" />
+                <PowerIcon className="h-5 w-5 text-gray-300" />
               </ListItemPrefix>
-              <Link onClick={handleLogout} to="/login">
+              <Link onClick={handleLogout} to="/login" className="text-white">
                 Log Out
               </Link>
             </ListItem>

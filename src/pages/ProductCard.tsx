@@ -59,7 +59,7 @@ const ProductCard: React.FC<
   };
 
   return (
-    <tbody >
+    <tbody>
       {eyeGlasses?.data?.map(
         (
           {
@@ -80,23 +80,25 @@ const ProductCard: React.FC<
           return (
             <tr key={_id} className="hover:bg-gray-100">
               {/* Checkbox */}
-              <td className={`${classes} py-3 px-4`}>
-                <Checkbox
-                  onClick={() => handleCheckboxClick(_id)}
-                  className="py-2 px-2 "
-                  crossOrigin={""}
-                  label=""
-                />
-              </td>
-              {/* Product Image and Name */}
-              <td className={`${classes} py-4 px-6`}>
-                <div className="flex items-center gap-2">
+              <td className={`${classes} py-2 px-2 md:w-16`}>
+                <div className="flex items-center gap-1">
+                  <Checkbox
+                    onClick={() => handleCheckboxClick(_id)}
+                    className="py-1 px-1"
+                    crossOrigin={""}
+                    label=""
+                  />
                   <img
                     className="h-8 w-12 rounded-lg object-cover object-center"
                     src={productImage ? productImage : fallbackImage}
                     alt={productImage}
                   />
-                  <div className="flex flex-col">
+                </div>
+              </td>
+              {/* Product Image and Name */}
+              <td className={`${classes} py-2 px-4 `}>
+                <div className="flex items-center gap-2">
+                  <div className="flex flex-col py-2 px-3 ">
                     <Typography
                       placeholder={""}
                       color="blue-gray"
@@ -108,7 +110,7 @@ const ProductCard: React.FC<
                 </div>
               </td>
               {/* Product Price */}
-              <td className={`${classes} py-4 px-6`}>
+              <td className={`${classes} py-2 px-2 `}>
                 <div className="flex flex-col">
                   <Typography
                     placeholder={""}
@@ -121,7 +123,7 @@ const ProductCard: React.FC<
                 </div>
               </td>
               {/* Product Quantity */}
-              <td className={`${classes} py-4 px-6`}>
+              <td className={`${classes} py-2 px-3 `}>
                 <Typography
                   placeholder={""}
                   variant="small"
@@ -132,7 +134,7 @@ const ProductCard: React.FC<
                 </Typography>
               </td>
               {/* Brand */}
-              <td className={`${classes} py-4 px-6`}>
+              <td className={`${classes} py-2 px-2 `}>
                 <Typography
                   placeholder={""}
                   variant="small"
@@ -143,7 +145,7 @@ const ProductCard: React.FC<
                 </Typography>
               </td>
               {/* Lens Type */}
-              <td className={`${classes} py-4 px-6`}>
+              <td className={`${classes} py-2 px-2 md:w-20 lg:w-24`}>
                 <Typography
                   placeholder={""}
                   variant="small"
@@ -154,7 +156,7 @@ const ProductCard: React.FC<
                 </Typography>
               </td>
               {/* Frame Material */}
-              <td className={`${classes} py-4 px-6`}>
+              <td className={`${classes} py-2 px-2 `}>
                 <Typography
                   placeholder={""}
                   variant="small"
@@ -165,21 +167,21 @@ const ProductCard: React.FC<
                 </Typography>
               </td>
               {/* Edit Duplicate Modal */}
-              <td className={`${classes} py-4 px-6`}>
+              <td className={`${classes} py-1 px-1 md:w-10`}>
                 <EditDuplicateModal id={_id} />
               </td>
               {/* Update Modal */}
-              <td className={`${classes} py-4 px-6`}>
+              <td className={`${classes} py-1 px-1 `}>
                 <UpdateModal id={_id} />
               </td>
               {/* Delete Button */}
-              <td className={`${classes} py-4 px-6`}>
+              <td className={`${classes} py-1 px-1 `}>
                 <Tooltip content="Delete Glass">
                   <Button
                     placeholder={""}
                     variant="gradient"
                     color="red"
-                    className="py-2 px-3"
+                    className="py-2 px-2"
                     onClick={() => handleDelete(_id)}
                   >
                     Delete
@@ -187,7 +189,7 @@ const ProductCard: React.FC<
                 </Tooltip>
               </td>
               {/* Sales Modal */}
-              <td className={`${classes} py-4 px-6`}>
+              <td className={`${classes} py-1 px-1 `}>
                 <SalesModal id={_id} />
               </td>
             </tr>

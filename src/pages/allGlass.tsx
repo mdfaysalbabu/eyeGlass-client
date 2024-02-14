@@ -18,6 +18,8 @@ import {
   useGetAllEyeGlassQuery,
 } from "../redux/features/eyeGlassesApi/eyeGlassApi";
 import Swal from "sweetalert2";
+import { useAppSelector } from "../redux/features/hooks";
+import { selectCurrentUser } from "../redux/features/apiAuth/authSlice";
 
 const AllGlasses = () => {
   const [material, setMaterial] = useState("");
@@ -32,6 +34,7 @@ const AllGlasses = () => {
   const [productsId, setProductsId] = useState<string[]>([]);
   const [deletedAll] = useDeleteManyEyeGlassMutation();
   const [page, setPage] = useState(1);
+  const user = useAppSelector(selectCurrentUser);
   const query = {
     material,
     shape,
@@ -43,6 +46,8 @@ const AllGlasses = () => {
     maxPrice,
     searchTerm,
     page,
+    email: user?.email,
+    role: user?.role,
     limit: 5,
   };
   const { data: eyeGlasses, isLoading } = useGetAllEyeGlassQuery(query);
@@ -116,12 +121,12 @@ const AllGlasses = () => {
   }
 
   return (
-    <Card placeholder="" className="bg-blue-gray-500 mx-auto">
+    <Card placeholder="" className="bg-indigo-50 mx-auto h-full w-full">
       <CardHeader
         placeholder=""
         floated={false}
         shadow={false}
-        className="rounded-xl bg-blue-100 p-4 md:p-6 lg:p-8"
+        className="rounded-xl bg-indigo-600 p-4 md:p-6 lg:p-8"
       >
         <div className="flex flex-wrap gap-4 mx-auto w-full">
           {/* Filter Select Inputs */}
@@ -222,8 +227,9 @@ const AllGlasses = () => {
             />
           </div>
           {/* Search Input */}
-          <div className="w-full md:w-96">
+          <div className="w-full md:w-96 text-white">
             <Input
+              className="text-white font-bold"
               crossOrigin={""}
               onChange={(e) => setSearchTerm(e.target.value)}
               label="Search Glass"
@@ -257,7 +263,7 @@ const AllGlasses = () => {
               ))}
             </tr>
           </thead>
-          <ProductCard 
+          <ProductCard
             eyeGlasses={eyeGlasses}
             handleCheckboxClick={handleCheckboxClick}
           />
