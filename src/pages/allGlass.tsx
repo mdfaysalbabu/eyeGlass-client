@@ -116,90 +116,87 @@ const AllGlasses = () => {
   }
 
   return (
-    <Card placeholder={""} className="bg-blue-gray-500 mx-auto">
+    <Card placeholder="" className="bg-blue-gray-500 mx-auto">
       <CardHeader
-        placeholder={""}
+        placeholder=""
         floated={false}
         shadow={false}
-        className="rounded-xl bg-blue-100 p-1 "
+        className="rounded-xl bg-blue-100 p-4 md:p-6 lg:p-8"
       >
-        <div className="mb-6 mt-4 flex justify-start items-start gap-4 mx-auto w-full ">
-          <div>
+        <div className="flex flex-wrap gap-4 mx-auto w-full">
+          {/* Filter Select Inputs */}
+          <div className="flex flex-wrap gap-4">
+            {/* Material */}
             <select
               value={material}
               onChange={(e) => setMaterial(e.target.value)}
-              className="block appearance-none w-36 bg-white border border-gray-200 hover:border-gray-500 px-4 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline text-sm "
+              className="block appearance-none bg-white border border-gray-200 hover:border-gray-500 px-2 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline text-sm "
             >
-              <option value="" disabled>
+              <option value="" disabled selected>
                 Filter by Material
               </option>
               <option value="Metal">Metal</option>
               <option value="Plastic">Plastic</option>
-              <option value="Acetate">Titanium</option>
+              <option value="Titanium">Titanium</option>
             </select>
-          </div>
-          <div>
+            {/* Shape */}
             <select
               value={shape}
               onChange={(e) => setShape(e.target.value)}
-              className="block appearance-none w-36 bg-white border border-gray-200 hover:border-gray-500 px-4 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline text-sm "
+              className="block appearance-none bg-white border border-gray-200 hover:border-gray-500 px-2 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline text-sm "
             >
-              <option value="" disabled>
+              <option value="" disabled selected>
                 Filter by Shape
               </option>
               <option value="Rectangular">Rectangular</option>
               <option value="Round">Round</option>
               <option value="Cat-eye">Cat-eye</option>
             </select>
-          </div>
-          <div>
+            {/* Lens */}
             <select
               value={lens}
               onChange={(e) => setLens(e.target.value)}
-              className="block appearance-none w-36 bg-white border border-gray-200 hover:border-gray-500 px-4 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline text-sm "
+              className="block appearance-none bg-white border border-gray-200 hover:border-gray-500 px-2 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline text-sm "
             >
-              <option value="" disabled>
+              <option value="" disabled selected>
                 Filter by Lens
               </option>
               <option value="Single-vision">Single-vision</option>
-              <option value="Bifocal">Polarized</option>
-              <option value="Progressive">UV Protection</option>
+              <option value="Polarized">Polarized</option>
+              <option value="UV Protection">UV Protection</option>
             </select>
-          </div>
-          <div>
+            {/* Brand */}
             <select
               value={brand}
               onChange={(e) => setBrand(e.target.value)}
-              className="block appearance-none w-36 bg-white border border-gray-200 hover:border-gray-500 px-4 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline text-sm "
+              className="block appearance-none bg-white border border-gray-200 hover:border-gray-500 px-2 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline text-sm "
             >
-              <option value="" disabled>
+              <option value="" disabled selected>
                 Filter by Brand
               </option>
               <option value="Lenskart">Lenskart</option>
-              <option value="Prada">UrbanStyle</option>
+              <option value="UrbanStyle">UrbanStyle</option>
               <option value="Gucci">Gucci</option>
             </select>
-          </div>
-          <div>
+            {/* Gender */}
             <select
               value={gender}
               onChange={(e) => setGender(e.target.value)}
-              className="block appearance-none w-36 bg-white border border-gray-200 hover:border-gray-500 px-4 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline text-sm "
+              className="block appearance-none bg-white border border-gray-200 hover:border-gray-500 px-2 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline text-sm "
             >
-              <option value="" disabled>
+              <option value="" disabled selected>
                 Filter by Gender
               </option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
             </select>
-          </div>
-          <div>
+            {/* Color */}
             <select
               value={color}
               onChange={(e) => setColor(e.target.value)}
-              className="block appearance-none w-36 bg-white border border-gray-200 hover:border-gray-500 px-4 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline text-sm "
+              className="block appearance-none bg-white border border-gray-200 hover:border-gray-500 px-2 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline text-sm "
             >
-              <option value="" disabled>
+              <option value="" disabled selected>
                 Filter by Color
               </option>
               <option value="Black">Black</option>
@@ -207,27 +204,24 @@ const AllGlasses = () => {
               <option value="Red">Red</option>
             </select>
           </div>
+          {/* Price Range Inputs */}
           <div className="flex gap-2">
             <input
-              onBlur={(e) => setMinPrice(e.target.value)}
+              value={minPrice}
+              onChange={(e) => setMinPrice(e.target.value)}
               type="number"
               className="border border-gray-400 hover:border-gray-500 px-2 py-2 rounded focus:outline-none focus:shadow-outline w-20 text-sm"
               placeholder="Min"
             />
             <input
-              onBlur={(e) => setMaxPrice(e.target.value)}
+              value={maxPrice}
+              onChange={(e) => setMaxPrice(e.target.value)}
               type="number"
               className="border border-gray-400 hover:border-gray-500 px-2 py-2 rounded focus:outline-none focus:shadow-outline w-20 text-sm"
               placeholder="Max"
             />
           </div>
-        </div>
-        <div className="flex flex-col items-center justify-between gap-4 md:flex-row ">
-          <div>
-            <Typography placeholder={""} variant="h4" color="teal">
-              All Glasses
-            </Typography>
-          </div>
+          {/* Search Input */}
           <div className="w-full md:w-96">
             <Input
               crossOrigin={""}
@@ -238,20 +232,21 @@ const AllGlasses = () => {
           </div>
         </div>
       </CardHeader>
+
       <CardBody
-        placeholder={""}
-        className=" px-0 max-auto table-auto text-left"
+        placeholder=""
+        className="px-0 max-auto  table-auto text-left overflow-x-auto"
       >
-        <table className="mt-4 w-full ">
+        <table className="w-full ">
           <thead>
             <tr>
               {TABLE_HEAD.map((head, index) => (
                 <th
                   key={index}
-                  className="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4"
+                  className="border-y border-blue-gray-100 bg-blue-gray-50/50 p-2"
                 >
                   <Typography
-                    placeholder={""}
+                    placeholder=""
                     variant="small"
                     color="blue-gray"
                     className="font-normal leading-none opacity-70"
@@ -262,36 +257,37 @@ const AllGlasses = () => {
               ))}
             </tr>
           </thead>
-          <ProductCard
+          <ProductCard 
             eyeGlasses={eyeGlasses}
             handleCheckboxClick={handleCheckboxClick}
           />
         </table>
       </CardBody>
+
       <CardFooter
-        placeholder={""}
+        placeholder=""
         className="flex items-center justify-between border-t border-blue-gray-50 p-4"
       >
         <Typography
-          placeholder={""}
+          placeholder=""
           variant="small"
           color="blue-gray"
           className="font-normal"
         >
-          {`Page ${page} `}
+          {`Page ${page}`}
         </Typography>
         <div className="flex gap-2">
           <Button
+            placeholder=""
             onClick={() => setPage(page - 1)}
-            placeholder={""}
             variant="outlined"
             size="sm"
           >
             Previous
           </Button>
           <Button
+            placeholder=""
             onClick={() => setPage(page + 1)}
-            placeholder={""}
             variant="outlined"
             size="sm"
           >

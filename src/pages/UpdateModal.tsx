@@ -120,10 +120,15 @@ const UpdateModal = ({ id }: { id: string }) => {
         Update
       </Button>
       <Dialog placeholder={""} open={open} handler={handleOpen}>
-        <div className="bg-teal-50">
-          <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="bg-gradient-to-r from-gray-100 to-teal-50">
+          <form
+            className="h-full flex flex-col"
+            onSubmit={handleSubmit(onSubmit)}
+          >
             <div className="flex justify-between items-center">
-              <DialogHeader placeholder={""} className="text-green-500">Update Glass</DialogHeader>
+              <DialogHeader placeholder={""} className="text-green-500">
+                Update Glass
+              </DialogHeader>
               <div
                 onClick={handleOpen}
                 className="me-4 cursor-pointer border-2 border-red-400 p-1"
@@ -145,7 +150,7 @@ const UpdateModal = ({ id }: { id: string }) => {
               </div>
             </div>
             <DialogBody placeholder={""}>
-              <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 my-5">
+              <div className="grid lg:grid-cols-2 grid-cols-2 gap-4 my-5">
                 <div>
                   <Input
                     {...register("productName")}
@@ -155,6 +160,8 @@ const UpdateModal = ({ id }: { id: string }) => {
                     placeholder=""
                     color="indigo"
                     label="Product Name"
+                    size="lg"
+                    className="text-orange-600 font-bold text-5xl"
                   />
                 </div>
                 <div>
@@ -166,6 +173,8 @@ const UpdateModal = ({ id }: { id: string }) => {
                     placeholder=""
                     color="indigo"
                     label="Product Price"
+                    size="lg"
+                    className="text-orange-600 font-bold text-5xl"
                   />
                 </div>
                 <div>
@@ -177,6 +186,8 @@ const UpdateModal = ({ id }: { id: string }) => {
                     placeholder=""
                     color="indigo"
                     label="Product Quantity"
+                    size="lg"
+                    className="text-orange-600 font-bold text-5xl"
                   />
                 </div>
                 <div>
@@ -188,6 +199,8 @@ const UpdateModal = ({ id }: { id: string }) => {
                     placeholder=""
                     color="indigo"
                     label="Frame Material"
+                    size="lg"
+                    className="text-orange-600 font-bold text-5xl"
                   />
                 </div>
                 <div>
@@ -199,6 +212,8 @@ const UpdateModal = ({ id }: { id: string }) => {
                     placeholder=""
                     color="indigo"
                     label="Frame Shape"
+                    size="lg"
+                    className="text-orange-600 font-bold text-5xl"
                   />
                 </div>
                 <div>
@@ -210,6 +225,8 @@ const UpdateModal = ({ id }: { id: string }) => {
                     placeholder=""
                     color="indigo"
                     label="Lens Type"
+                    size="lg"
+                    className="text-orange-600 font-bold text-5xl"
                   />
                 </div>
                 <div>
@@ -221,6 +238,8 @@ const UpdateModal = ({ id }: { id: string }) => {
                     placeholder=""
                     color="indigo"
                     label="Brand"
+                    size="lg"
+                    className="text-orange-600 font-bold text-5xl"
                   />
                 </div>
                 <div>
@@ -232,6 +251,8 @@ const UpdateModal = ({ id }: { id: string }) => {
                     placeholder=""
                     color="indigo"
                     label="Color"
+                    size="lg"
+                    className="text-orange-600 font-bold text-5xl"
                   />
                 </div>
                 <div>
@@ -252,6 +273,8 @@ const UpdateModal = ({ id }: { id: string }) => {
                     placeholder=""
                     color="indigo"
                     label="Product Image"
+                    size="lg"
+                    className="text-orange-600 font-bold text-5xl"
                   />
                 </div>
               </div>
@@ -262,6 +285,7 @@ const UpdateModal = ({ id }: { id: string }) => {
                 placeholder={""}
                 variant="gradient"
                 color="green"
+                className="w-full"
               >
                 <span>Update</span>
               </Button>

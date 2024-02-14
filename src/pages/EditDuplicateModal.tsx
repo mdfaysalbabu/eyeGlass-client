@@ -76,166 +76,193 @@ const EditDuplicateModal = ({ id }: { id: string }) => {
   };
 
   return (
-    <div className="">
+    <div className="rounded-xl">
       <Button
         placeholder={""}
         variant="outlined"
         color="green"
-        className="py-2 px-3"
+        className="py-2 px-3 "
         onClick={handleOpen}
       >
         Edit & Duplicate
       </Button>
-      <Dialog placeholder={""} open={open} handler={handleOpen}>
-        <div className="bg-teal-50">
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex justify-between items-center ">
-              <DialogHeader className="text-green-500" placeholder={""}>Edit & Duplicate</DialogHeader>
-              <div
-                onClick={handleOpen}
-                className="me-4 cursor-pointer border-2 border-red-400 p-1"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-6 h-6"
+      <div className="rounded-xl">
+        <Dialog placeholder={""} open={open} handler={handleOpen}>
+          <div className="bg-gradient-to-r from-gray-100 to-blue-100 ">
+            <form
+              className="h-full flex flex-col"
+              onSubmit={handleSubmit(onSubmit)}
+            >
+              <div className="flex justify-between items-center ">
+                <DialogHeader className="text-green-500" placeholder={""}>
+                  Edit & Duplicate
+                </DialogHeader>
+                <div
+                  onClick={handleOpen}
+                  className="me-4 cursor-pointer border-2 border-red-400 p-1"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18 18 6M6 6l12 12"
-                  />
-                </svg>
-              </div>
-            </div>
-            <DialogBody placeholder={""}>
-              <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 my-5">
-                <div>
-                  <Input
-                    {...register("productName")}
-                    defaultValue={glassData?.data?.productName}
-                    type="text"
-                    crossOrigin={""}
-                    placeholder=""
-                    color="indigo"
-                    label="Product Name"
-                  />
-                </div>
-                <div>
-                  <Input
-                    {...register("productPrice")}
-                    defaultValue={glassData?.data?.productPrice}
-                    type="number"
-                    crossOrigin={""}
-                    placeholder=""
-                    color="indigo"
-                    label="Product Price"
-                  />
-                </div>
-                <div>
-                  <Input
-                    {...register("productQuantity")}
-                    defaultValue={glassData?.data?.productQuantity}
-                    type="number"
-                    crossOrigin={""}
-                    placeholder=""
-                    color="indigo"
-                    label="Product Quantity"
-                  />
-                </div>
-                <div>
-                  <Input
-                    {...register("frameMaterial")}
-                    defaultValue={glassData?.data?.frameMaterial}
-                    type="text"
-                    crossOrigin={""}
-                    placeholder=""
-                    color="indigo"
-                    label="Frame Material"
-                  />
-                </div>
-                <div>
-                  <Input
-                    {...register("frameShape")}
-                    defaultValue={glassData?.data?.frameShape}
-                    type="text"
-                    crossOrigin={""}
-                    placeholder=""
-                    color="indigo"
-                    label="Frame Shape"
-                  />
-                </div>
-                <div>
-                  <Input
-                    {...register("lensType")}
-                    defaultValue={glassData?.data?.lensType}
-                    type="text"
-                    crossOrigin={""}
-                    placeholder=""
-                    color="indigo"
-                    label="Lens Type"
-                  />
-                </div>
-                <div>
-                  <Input
-                    {...register("brand")}
-                    defaultValue={glassData?.data?.brand}
-                    type="text"
-                    crossOrigin={""}
-                    placeholder=""
-                    color="indigo"
-                    label="Brand"
-                  />
-                </div>
-                <div>
-                  <Input
-                    {...register("color")}
-                    defaultValue={glassData?.data?.color}
-                    type="text"
-                    crossOrigin={""}
-                    placeholder=""
-                    color="indigo"
-                    label="Color"
-                  />
-                </div>
-                <div>
-                  <select
-                    className="w-full py-2 rounded-lg border border-purple-50 text-sm text-gray-500"
-                    {...register("gender")}
-                    defaultValue={glassData?.data?.gender}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-6 h-6 text-white"
                   >
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                  </select>
-                </div>
-                <div>
-                  <Input
-                    {...register("productImage")}
-                    type="file"
-                    crossOrigin={""}
-                    placeholder=""
-                    color="indigo"
-                    label="Product Image"
-                  />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 18 18 6M6 6l12 12"
+                    />
+                  </svg>
                 </div>
               </div>
-            </DialogBody>
-            <DialogFooter placeholder={""}>
-              <Button
-                type="submit"
-                placeholder={""}
-                variant="gradient"
-                color="green"
-              >
-                <span>Duplicate</span>
-              </Button>
-            </DialogFooter>
-          </form>
-        </div>
-      </Dialog>
+              <DialogBody className="flex-1 overflow-y-auto" placeholder={""}>
+                <div className="grid lg:grid-cols-2 grid-cols-2 gap-4 my-5 ">
+                  <div>
+                    <Input
+                      {...register("productName")}
+                      defaultValue={glassData?.data?.productName}
+                      type="text"
+                      crossOrigin={""}
+                      placeholder=""
+                      color="indigo"
+                      label="Product Name"
+                      size="lg"
+                      className="text-orange-800 font-bold text-5xl"
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      {...register("productPrice")}
+                      defaultValue={glassData?.data?.productPrice}
+                      type="number"
+                      crossOrigin={""}
+                      placeholder=""
+                      color="indigo"
+                      label="Product Price"
+                      size="lg"
+                      className="text-orange-800 font-bold text-5xl"
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      {...register("productQuantity")}
+                      defaultValue={glassData?.data?.productQuantity}
+                      type="number"
+                      crossOrigin={""}
+                      placeholder=""
+                      color="indigo"
+                      label="Product Quantity"
+                      size="lg"
+                      className="text-orange-800 font-bold text-5xl"
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      {...register("frameMaterial")}
+                      defaultValue={glassData?.data?.frameMaterial}
+                      type="text"
+                      crossOrigin={""}
+                      placeholder=""
+                      color="indigo"
+                      label="Frame Material"
+                      size="lg"
+                      className="text-orange-800 font-bold text-5xl"
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      {...register("frameShape")}
+                      defaultValue={glassData?.data?.frameShape}
+                      type="text"
+                      crossOrigin={""}
+                      placeholder=""
+                      color="indigo"
+                      label="Frame Shape"
+                      size="lg"
+                      className="text-orange-800 font-bold text-5xl"
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      {...register("lensType")}
+                      defaultValue={glassData?.data?.lensType}
+                      type="text"
+                      crossOrigin={""}
+                      placeholder=""
+                      color="indigo"
+                      label="Lens Type"
+                      size="lg"
+                      className="text-orange-800 font-bold text-5xl"
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      {...register("brand")}
+                      defaultValue={glassData?.data?.brand}
+                      type="text"
+                      crossOrigin={""}
+                      placeholder=""
+                      color="indigo"
+                      label="Brand"
+                      size="lg"
+                      className="text-orange-800 font-bold text-5xl"
+                    />
+                  </div>
+                  <div>
+                    <Input
+                      {...register("color")}
+                      defaultValue={glassData?.data?.color}
+                      type="text"
+                      crossOrigin={""}
+                      placeholder=""
+                      color="indigo"
+                      label="Color"
+                      size="lg"
+                      className="text-orange-800 font-bold text-5xl"
+                    />
+                  </div>
+                  <div>
+                    <select
+                      className="w-full py-2 rounded-lg border border-purple-50 text-sm text-gray-500"
+                      {...register("gender")}
+                      defaultValue={glassData?.data?.gender}
+                    >
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                    </select>
+                  </div>
+                  <div>
+                    <Input
+                      {...register("productImage")}
+                      type="file"
+                      crossOrigin={""}
+                      placeholder=""
+                      color="indigo"
+                      label="Product Image"
+                      size="lg"
+                      className="text-orange-800 font-bold text-5xl"
+                    />
+                  </div>
+                </div>
+              </DialogBody>
+              <DialogFooter placeholder={""}>
+                <Button
+                  type="submit"
+                  placeholder={""}
+                  variant="gradient"
+                  color="green"
+                  className="w-full"
+                  
+                >
+                  <span>Duplicate</span>
+                </Button>
+              </DialogFooter>
+            </form>
+          </div>
+        </Dialog>
+      </div>
     </div>
   );
 };

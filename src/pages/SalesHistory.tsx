@@ -32,25 +32,28 @@ const SalesHistory = () => {
   }
 
   return (
-    <Card placeholder={""} className="h-full w-full bg-green-200">
+    <Card
+      placeholder=" "
+      className="h-full w-full bg-gray-100 shadow-lg rounded-lg"
+    >
       <CardHeader
-        placeholder={""}
+        placeholder=" "
         floated={false}
         shadow={false}
-        className="rounded-lg bg-red-100 p-3"
+        className="bg-indigo-500 text-white rounded-t-lg p-4"
       >
         <div className="mb-6 mt-4 flex items-center justify-between gap-8"></div>
         <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
           <div>
-            <Typography placeholder={""} variant="h4" color="purple">
-            Sales History
+            <Typography placeholder=" " variant="h3" color="white">
+              Sales History
             </Typography>
           </div>
           <div>
             <select
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-              className="block appearance-none w-60 bg-white border border-gray-200 hover:border-gray-500 px-4 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline text-sm "
+              className="block appearance-none w-60 bg-white border border-gray-200 hover:border-gray-500 px-4 py-2 rounded shadow leading-tight focus:outline-none focus:shadow-outline text-sm text-gray-800"
             >
               <option value="" disabled>
                 Show Data by Filter
@@ -63,20 +66,20 @@ const SalesHistory = () => {
           </div>
         </div>
       </CardHeader>
-      <CardBody placeholder={""} className="overflow-scroll px-0 ">
+      <CardBody placeholder=" " className="overflow-scroll px-0">
         <table className="mt-4 w-full min-w-max table-auto text-left">
           <thead>
             <tr>
               {TABLE_HEAD.map((head, index) => (
                 <th
                   key={index}
-                  className="border-y border-blue-gray-100 bg-blue-gray-50/50 p-4"
+                  className="border-y border-gray-200 bg-gray-50 p-4"
                 >
                   <Typography
-                    placeholder={""}
+                    placeholder=" "
                     variant="small"
-                    color="blue-gray"
-                    className="font-normal leading-none opacity-70"
+                    color="gray"
+                    className="font-semibold text-lg leading-none opacity-90"
                   >
                     {head}
                   </Typography>

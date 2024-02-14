@@ -45,7 +45,7 @@ const SalesCard = ({ sales }: Tprops) => {
                   />
                   <div className="flex flex-col">
                     <Typography
-                      placeholder={""}
+                      placeholder=" "
                       color="blue-gray"
                       className="font-normal text-[12px]"
                     >
@@ -57,7 +57,7 @@ const SalesCard = ({ sales }: Tprops) => {
               <td className={classes}>
                 <div className="flex flex-col">
                   <Typography
-                    placeholder={""}
+                    placeholder=" "
                     variant="small"
                     color="blue-gray"
                     className="font-normal"
@@ -68,7 +68,7 @@ const SalesCard = ({ sales }: Tprops) => {
               </td>
               <td className={classes}>
                 <Typography
-                  placeholder={""}
+                  placeholder=" "
                   variant="small"
                   color="blue-gray"
                   className="font-normal"
@@ -78,7 +78,7 @@ const SalesCard = ({ sales }: Tprops) => {
               </td>
               <td className={classes}>
                 <Typography
-                  placeholder={""}
+                  placeholder=" "
                   variant="small"
                   color="blue-gray"
                   className="font-normal"
@@ -88,7 +88,7 @@ const SalesCard = ({ sales }: Tprops) => {
               </td>
               <td className={classes}>
                 <Typography
-                  placeholder={""}
+                  placeholder=" "
                   variant="small"
                   color="blue-gray"
                   className="font-normal"
@@ -98,7 +98,7 @@ const SalesCard = ({ sales }: Tprops) => {
               </td>
               <td className={classes}>
                 <Typography
-                  placeholder={""}
+                  placeholder=" "
                   variant="small"
                   color="blue-gray"
                   className="font-normal"
@@ -108,7 +108,7 @@ const SalesCard = ({ sales }: Tprops) => {
               </td>
               <td className={classes}>
                 <Typography
-                  placeholder={""}
+                  placeholder=" "
                   variant="small"
                   color="blue-gray"
                   className="font-normal"
