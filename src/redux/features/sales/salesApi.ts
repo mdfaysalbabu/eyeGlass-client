@@ -15,9 +15,16 @@ const salesApi = baseApi.injectEndpoints({
           params: params,
         };
       },
-      providesTags: ["all-glasses"],
+      providesTags: ["sale"],
+    }),
+    getSale: builder.query({
+      query: (id: string) => ({
+        url: `/sales/get-sale/${id}`,
+        method: "GET",
+      }),
+      providesTags: ["sale"],
     }),
   }),
 });
 
-export const { useGetAllSalesQuery } = salesApi;
+export const { useGetAllSalesQuery, useGetSaleQuery } = salesApi;

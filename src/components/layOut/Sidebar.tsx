@@ -45,9 +45,9 @@ const Sidebar = () => {
           placeholder="..."
           color="transparent"
           shadow={false}
-          className="h-[calc(100vh--2rem)]  w-full p-6 bg-gradient-to-br from-pink-500 to-purple-300"
+          className="h-[calc(100vh)] mb-0 w-full p-6 bg-gradient-to-br from-pink-500 to-purple-300"
         >
-          <div className="mb-6 mt-4 flex items-center gap-4 p-4">
+          <div className="mb-4 mt-4 flex items-center gap-4 p-4">
             <FaGlasses className="h-6 w-6 text-white" />
             <Typography
               placeholder="..."

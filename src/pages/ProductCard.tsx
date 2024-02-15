@@ -26,14 +26,14 @@ type TEyeGlass = {
   brand: string;
 };
 
-type Tprops = {
+type TProps = {
   eyeGlasses: {
     data: TEyeGlass[];
   };
 };
 
 const ProductCard: React.FC<
-  Tprops & { handleCheckboxClick: (id: string) => void }
+  TProps & { handleCheckboxClick: (id: string) => void }
 > = ({ eyeGlasses, handleCheckboxClick }) => {
   const [deleteGlass] = useDeleteEyeGlassMutation();
 

@@ -1,5 +1,6 @@
 import { Typography } from "@material-tailwind/react";
 import fallbackImage from "../assets/no-image.png";
+import DownloadPDF from "./PdfModal";
 
 type TSales = {
   _id: string;
@@ -16,13 +17,13 @@ type TSales = {
     brand: string;
   };
 };
-type Tprops = {
+type TProps = {
   sales: {
     data: TSales[];
   };
 };
 
-const SalesCard = ({ sales }: Tprops) => {
+const SalesCard = ({ sales }: TProps) => {
   return (
     <tbody>
       {sales?.data?.map(
@@ -115,6 +116,9 @@ const SalesCard = ({ sales }: Tprops) => {
                 >
                   {quantity || "Not Found"}
                 </Typography>
+              </td>
+              <td className={classes}>
+                <DownloadPDF id={_id} />
               </td>
             </tr>
           );

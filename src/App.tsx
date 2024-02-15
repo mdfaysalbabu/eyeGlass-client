@@ -3,7 +3,7 @@ import ProtectedRoute from "./components/layOut/ProtectedRoute";
 
 const App = () => {
   return (
-    <div >
+    <div>
       <ProtectedRoute>
         <MainLayout />
       </ProtectedRoute>
