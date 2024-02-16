@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   Card,
   CardHeader,
@@ -14,7 +15,7 @@ import { selectCurrentUser } from "../redux/features/apiAuth/authSlice";
 
 const SalesHistory = () => {
   const [filter, setFilter] = useState("");
-  const user = useAppSelector(selectCurrentUser);
+  const user: any = useAppSelector(selectCurrentUser);
   const userInfo = {
     email: user?.email,
     role: user?.role,

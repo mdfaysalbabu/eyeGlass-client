@@ -74,7 +74,7 @@ const SalesCard = ({ sales }: TProps) => {
                   color="blue-gray"
                   className="font-normal"
                 >
-                  {productId?.productQuantity || "Not Found"}
+                  {productId?.productPrice || "Not Found"}
                 </Typography>
               </td>
               <td className={classes}>
