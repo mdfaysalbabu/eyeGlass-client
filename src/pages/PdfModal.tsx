@@ -16,7 +16,7 @@ const DownloadPDF = ({ id }: { id: string }) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(!open);
   const { data: saleData } = useGetSaleQuery(id);
-  console.log({ saleData });
+ 
   const componentRef = useRef<HTMLDivElement>(null);
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,

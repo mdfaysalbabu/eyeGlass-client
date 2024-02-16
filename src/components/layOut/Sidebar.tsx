@@ -21,7 +21,7 @@ import {
   Bars3Icon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import { FaChartLine, FaEye, FaGlasses, FaPlus } from "react-icons/fa";
+import { FaChartLine, FaEye, FaGlasses, FaHome, FaPlus } from "react-icons/fa";
 
 const Sidebar = () => {
   const dispatch = useAppDispatch();
@@ -39,7 +39,7 @@ const Sidebar = () => {
 
   return (
     <div>
-      <div className="hidden lg:block">
+      <div className="hidden lg:block fixed">
         {/* Only visible on large screens */}
         <Card
           placeholder="..."
@@ -69,6 +69,14 @@ const Sidebar = () => {
           </div>
           <List placeholder="...">
             <List placeholder="..." className="p-0">
+              <NavLink to="/" className="text-white">
+                <ListItem placeholder="...">
+                  <ListItemPrefix placeholder="...">
+                    <FaHome strokeWidth={3} className="h-6 w-6 text-gray-300" />
+                  </ListItemPrefix>
+                  Home
+                </ListItem>
+              </NavLink>
               <ListItem placeholder="...">
                 <ListItemPrefix placeholder="...">
                   <FaPlus strokeWidth={3} className="h-6 w-6 text-gray-300" />
@@ -117,7 +125,7 @@ const Sidebar = () => {
         variant="text"
         size="lg"
         onClick={openDrawer}
-        className="lg:hidden" // Hide on large screens
+        className="lg:hidden bg-blue-gray-800 m-2" // Hide on large screens
       >
         {isDrawerOpen ? (
           <XMarkIcon className="h-8 w-8 stroke-2 text-gray-300" />
@@ -137,18 +145,14 @@ const Sidebar = () => {
           placeholder="..."
           color="transparent"
           shadow={false}
-          className="h-[calc(100vh-2rem)] w-full p-4 bg-gradient-to-br from-pink-500 to-purple-300"
+          className="h-[calc(100vh)] w-full p-4 bg-gradient-to-br from-pink-500 to-purple-300"
         >
           <div className="mb-6 mt-4 flex items-center gap-4 p-4">
-            <img
-              src="https://docs.material-tailwind.com/img/logo-ct-dark.png"
-              alt="brand"
-              className="h-8 w-8"
-            />
+            <FaGlasses className="h-6 w-6 text-white" />
             <Typography
               placeholder="..."
               variant="h5"
-              color="white"
+              color="yellow"
               className="text-lg"
             >
               Eye Glasses
@@ -164,11 +168,15 @@ const Sidebar = () => {
             />
           </div>
           <List placeholder="...">
-            <ListItemPrefix placeholder="...">
-              <FaGlasses className="h-6 w-6 text-gray-300" />
-            </ListItemPrefix>
-
             <List placeholder="..." className="p-0">
+              <NavLink to="/" className="text-white">
+                <ListItem placeholder="...">
+                  <ListItemPrefix placeholder="...">
+                    <FaHome strokeWidth={3} className="h-6 w-6 text-gray-300" />
+                  </ListItemPrefix>
+                  Home
+                </ListItem>
+              </NavLink>
               <ListItem placeholder="...">
                 <ListItemPrefix placeholder="...">
                   <FaPlus strokeWidth={3} className="h-6 w-6 text-gray-300" />

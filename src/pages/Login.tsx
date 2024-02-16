@@ -28,27 +28,34 @@ const Login = () => {
     const user = verifyToken(res.data.accessToken) as TUser;
     dispatch(setUser({ user, token: res.data.accessToken }));
     toast.success("Logged in", { id: toastId, duration: 2000 });
-    navigate(`/all-products`);
+    navigate(`/`);
   };
 
   return (
     <div className="w-full min-h-screen flex items-center justify-center">
       <div className="w-full max-w-[800px] m-4 shadow-lg bg-white flex flex-col lg:flex-row group text-[#0095ff] ">
         <div className="w-1/2 min-h-full bg-[#0095ff] relative overflow-hidden hidden lg:block">
-          <h1 className="text-teal-500 text-2xl absolute bottom-3 right-3 text-right">
-            Hey! <br /> Welcome to
-            <br /> EyeGlass Inventory
-          </h1>
+          <div>
+            <span>
+              <h1 className="text-green-500 text-2xl absolute bottom-3 right-3 text-right">
+                <span className="text-red-600">Hey!</span> <br /> Welcome to
+                <br />
+                <span className="text-orange-600">EyeGlass Inventory</span>
+              </h1>
+            </span>
+          </div>
           <img
             className="w-full h-full"
-            src="https://img.freepik.com/premium-photo/modern-fashionable-eye-glasses-isolated-white-background_236836-7055.jpg?w=900"
+            src="https://img.freepik.com/free-vector/sunglasses-with-feathers_24908-81042.jpg?w=740&t=st=1707994831~exp=1707995431~hmac=9642e646e370f53ee4769941c3a3cbddaa58c618ffc1f213508538ec6af88d0c"
             alt=""
           />
           <span className="bg-sky-800/20 w-32 h-32 -top-8 -left-8 rounded-full absolute z-20 group-hover:w-56 group-hover:h-56 duration-500"></span>
           <span className="bg-sky-800/50 w-36 h-36 -top-5 -left-5  rounded-full absolute z-10"></span>
         </div>
         <form onSubmit={handleSubmit(onSubmit)} className="p-8 flex-1">
-          <h1 className="text-4xl pb-4">Login</h1>
+          <h1 className="text-3xl pb-4 text-blue-600 font-semibold ">
+            Login
+          </h1>
           <div className="space-y-5">
             <label htmlFor="email" className="block">
               Email
@@ -79,7 +86,7 @@ const Login = () => {
             type="submit"
             className="py-2 px-5 mb-4 mt-8  w-full overflow-hidden shadow-lg border-2 rounded-md border-dashed border-[#0095ff] before:block before:absolute before:translate-x-full before:inset-0 before:bg-[#0095ff] before:hover:translate-x-0  before:duration-300 before:rounded-s-full before:-z-10 after:-z-10 after:rounded-e-full after:duration-300 after:hover:translate-x-0 after:block after:absolute after:-translate-x-full after:inset-0 after:bg-[#0095ff] relative inline-block hover:text-white z-50"
           >
-            Register
+            Login
           </button>
           <p className="text-sm text-center gap-2 flex justify-center sm:px-6 ">
             Don't have an account
